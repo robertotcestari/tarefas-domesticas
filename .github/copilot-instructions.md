@@ -8,3 +8,12 @@ Use sempre o Prisma Client para interagir com o banco de dados.
 Use sempre o Prisma Migrate para gerenciar as migrações do banco de dados.
 
 Use sempre o Bun.
+
+## Interface Guidelines
+
+Para interface, vamos usar o Tailwind CSS.
+Para componentes, vamos usar o shadcn/ui.
+
+## Ferramentas externas
+
+Use o Context7 como ferramenta para encontrar documentações de bibliotecas.

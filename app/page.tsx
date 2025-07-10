@@ -1,5 +1,7 @@
 import { auth, signOut } from '@/auth';
 import Image from 'next/image';
+import AddTaskForm from './components/add-task-form';
+import TasksList from './components/tasks-list';
 
 export default async function Home() {
   const session = await auth();
@@ -53,13 +55,15 @@ export default async function Home() {
 
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
-          <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 flex items-center justify-center">
-            <div className="text-center">
-              <h2 className="text-xl text-gray-500 mb-2">Bem-vindo!</h2>
-              <p className="text-gray-400">
-                Suas tarefas aparecerão aqui em breve.
-              </p>
-            </div>
+          <div className="mb-6">
+            <AddTaskForm />
+          </div>
+
+          <div className="bg-white shadow rounded-lg p-6">
+            <h2 className="text-lg font-medium text-gray-900 mb-4">
+              Suas Tarefas
+            </h2>
+            <TasksList />
           </div>
         </div>
       </div>

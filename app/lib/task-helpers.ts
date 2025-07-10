@@ -1,5 +1,5 @@
 import { Task as PrismaTask, User as PrismaUser } from '@prisma/client';
-import { Task, User, DayOfWeek, RepetitionUnit } from '../_types/task-types';
+import { Task, User, DayOfWeek, RepetitionUnit } from '../_types/types';
 
 // Tipos auxiliares para repetição
 type DailyRepetitionData = {
