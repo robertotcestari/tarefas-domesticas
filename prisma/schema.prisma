@@ -12,34 +12,34 @@ datasource db {
 
 // Modelo do usuário
 model User {
-  id    String @id @default(cuid())
+  id    String  @id @default(cuid())
   name  String
-  email String @unique
+  email String  @unique
   image String?
-  
+
   // Relacionamento com tarefas
   tasks Task[]
-  
+
   @@map("users")
 }
 
 // Modelo da tarefa
 model Task {
-  taskId      String    @id @default(cuid())
+  taskId      String   @id @default(cuid())
   title       String
   ownerId     String?
-  isCompleted Boolean   @default(false)
+  isCompleted Boolean  @default(false)
   dueDate     DateTime
-  
+
   // Campos de repetição (usando JSON para flexibilidade)
   repetitionType String? // 'daily' | 'weekly' | 'monthly' | 'custom'
-  repetitionData Json?   // Dados específicos da repetição
-  
+  repetitionData Json? // Dados específicos da repetição
+
   // Relacionamento com usuário
   owner User? @relation(fields: [ownerId], references: [id], onDelete: SetNull)
-  
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+
   @@map("tasks")
 }
